@@ -1,3 +1,63 @@
+/* 
+#contenido
+ {
+    display: none; /* Inicialmente oculto 
+  }
+
+
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:url('../img/portada-bg.webp');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .loader-wrapper img {
+    width: 30%;
+  }
+*/
+
+.logo {
+    animation: pulse 2s infinite alternate;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0.2;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .loader {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .content {
+    display: none;
+  }
+  
+
 
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -68,6 +128,11 @@ h4 {
     border: 2px solid;
 }
 
+.btn-success2 {
+    --bs-btn-bg: #b3d7cc;
+    width: 20rem
+}
+
 .btn-sm {
     --bs-btn-padding-x: 1.5rem;
 }
@@ -79,7 +144,7 @@ h4 {
 
 .navbar-toggler-icon {
     background-image: url(
-"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(152, 199, 155,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='https://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(152, 199, 155,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 .navbar ul{
@@ -100,6 +165,11 @@ h4 {
 }
 
 /* Estilos para el footer */
+.modal-formulario .modal-tittle {
+    color: #486656;
+}
+
+
 .footer{
     background-color:#486656 !important;
 }
@@ -117,7 +187,7 @@ h4 {
 .footer h5{
     font-weight:700;
     font-size: 20px;
-    color:#FEF9E2 !important;
+    color:#FEF9E2;
 }
 
 .footer li{
@@ -147,7 +217,27 @@ h4 {
     box-shadow:none;
 }
 
+
+
 .footer input::placeholder{
+    color: #FEF9E2;
+}
+
+.footer textarea{
+    background-color: #486656 ;
+    border: 1px #FEF9E2 solid;
+    border-radius: 0px;
+}
+
+.footer textarea:focus {
+    background-color: #486656 ;
+    border: 1px #FEF9E2 solid;
+    border-radius: 0px;
+    color: #FEF9E2 ;
+    box-shadow:none;
+}
+
+.footer textarea::placeholder{
     color: #FEF9E2;
 }
 
@@ -202,6 +292,7 @@ h4 {
     padding: 5px 0px 5px 0px;
     margin: auto;
     background-color: #292929;
+    width: 20rem
 }
 
 /* Estilos iconos */
@@ -318,14 +409,17 @@ h4 {
 }
 
 .card {
-    border-radius: 20px;
-    width: 36rem;
+    border: #FFFFFF 5px solid;
+    border-radius:20px;
+    box-shadow: 0px 0px 20px #c3e9c6;
+
+    /*width: 36rem;*/
 }
 
 /*Estilos quotes section */
 .quote-img2 {
-    margin-left:-300px;
-    margin-top: -106px;
+    margin-left:-340px;
+    margin-top: 64px;
     position:absolute;
 }
 
@@ -341,7 +435,7 @@ h4 {
     border-radius: 0px 0px 50px 50px;
     background-size: repeat;
     background-position: center;
-    height:200px;
+    height:180px;
 }
 
 .tittle2 {
@@ -352,7 +446,7 @@ h4 {
     border-radius: 0px 0px 50px 50px;
     background-size: repeat;
     background-position: center;
-    height:200px;
+    height:180px;
 }
 
 .tittle3 {
@@ -394,8 +488,14 @@ h4 {
 .detail {
     background-color: white;
     border-radius: 20px;
-    border: 2px solid #98C79B;
+    border: 3px solid #98C79B;
     padding:15px;
+
+}
+
+.detail-border{
+    border-left: 2px solid #e5e5e5;
+    border-right: 2px solid #e5e5e5;
 }
 
 .detail p {
@@ -405,6 +505,62 @@ h4 {
 
 .description {
     margin-left: 33%;
+}
+
+.filosofia-img {
+    margin-top:10px;
+}
+
+.img-fluid2{
+    cursor: pointer;
+}
+
+.btn-secondary {
+    --bs-btn-bg:#FBBB52;
+    --bs-btn-color: #486656;
+    border: solid 2px #486656;
+    border-radius: 25px;
+    margin: auto 30px;
+
+}
+
+.card-equipo {
+    background-color:transparent;
+    --bs-card-border-color:transparent;
+    max-width: 18rem;
+    margin: auto;
+    
+}
+
+.card a{
+    background-color: #419683;
+    border: #486656 1px solid;
+    border-radius: 20px;
+}
+
+.card a:hover{
+    background-color: #FFE3B5;
+    color: #486656;
+}
+
+.card-experiencias {
+    height: 42rem;
+}
+
+.card-fundaciones {
+    height: 33rem;
+}
+
+.carousel-item h4{
+    color: #98C79B;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #486656;
+}
+
+.quotes {
+    height: 570px;
 }
 
 @media (min-width: 1178px) {
@@ -421,10 +577,15 @@ h4 {
 
 @media (max-width: 1200px) {
     .quote-img2 {
-        margin-left:-500px;
-        margin-top: -106px;
+        margin-left:-540px;
+        margin-top: 94px;
         position:absolute;
     }
+
+    .quotes {
+        height: 600px;
+    }
+    
 }
 
 
@@ -442,6 +603,7 @@ h4 {
         margin-left:0px;
         margin: auto;
     }
+
 }
 
 @media (min-width: 991px) {
@@ -452,6 +614,11 @@ h4 {
         width: 100%; /* Ancho completo */
         z-index: 1000; /* Asegura que la card esté por encima del contenido principal */
     }
+
+    .filosofia-img {
+        max-width: 450px;
+        margin-top:10px;
+    }
 }
 
 
@@ -461,6 +628,12 @@ h4 {
     .card {
         width: 100%;
     }
+
+    .card-experiencias {
+        height: 62rem;
+    }
+
+    
     
 }
 
@@ -509,7 +682,7 @@ h4 {
     }
 
     .img-fluid2 {
-        max-width: 32%;
+        max-width: 35%;
         height: auto;
         margin:auto 2px;
     }
@@ -517,5 +690,16 @@ h4 {
     .tittle3 {
         height:500px;
     }
+
+    .card-experiencias {
+        height: 49rem;
+    }
+
 }
 
+
+@media (max-width: 400px) {
+    .card-experiencias {
+        height: 38rem;
+    }
+}
